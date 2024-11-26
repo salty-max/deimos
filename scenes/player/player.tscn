@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://do8tuqd8iqba2"]
+
+[ext_resource type="Texture2D" uid="uid://covodj3vtjpeo" path="res://assets/art/spritesheets/creatures.png" id="1_3ot14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ukgk"]
+atlas = ExtResource("1_3ot14")
+region = Rect2(96, 600, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypa5p"]
+atlas = ExtResource("1_3ot14")
+region = Rect2(120, 600, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbrye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ukgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypa5p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbrye")
+autoplay = "default"

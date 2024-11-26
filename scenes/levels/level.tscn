@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcm6acckv6oaw"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_3ja1o"]
+[ext_resource type="Texture2D" uid="uid://d17uvewwude6a" path="res://assets/art/level_1_bg.png" id="2_ro2tk"]
+[ext_resource type="PackedScene" uid="uid://do8tuqd8iqba2" path="res://scenes/player/player.tscn" id="3_lg3td"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_3ja1o")
+bg = ExtResource("2_ro2tk")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_ro2tk")
+region_enabled = true
+region_rect = Rect2(-4000, -4000, 4000, 4000)
+
+[node name="Player" parent="." instance=ExtResource("3_lg3td")]
